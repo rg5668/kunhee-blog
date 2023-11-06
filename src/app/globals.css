@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-[#f5f5f5];
+    @apply text-xs;
+    @apply h-[3000px];
+  }
+  main {
+    @apply h-full;
+  }
+}
