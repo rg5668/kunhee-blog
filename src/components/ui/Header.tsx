@@ -17,11 +17,12 @@ export default function Header() {
               {menu.href ? (
                 <Link
                   href={`${menu.href}`}
-                  className={`block ${
+                  className={`hover-underline-animation block ${
                     startPathname === menu.href
-                      ? "opacity-[1]"
+                      ? "opacity-[1] active"
                       : "opacity-[0.7]"
-                  } hover:opacity-[1] `}
+                  } hover:opacity-[1]
+                    `}
                 >
                   <span>{menu.name}</span>
                 </Link>
