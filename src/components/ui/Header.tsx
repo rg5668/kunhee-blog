@@ -9,12 +9,17 @@ export default function Header() {
   const startPathname = pathname.split("/", 2).join("/");
 
   return (
-    <header className="bg-black h-11 z-10 relative">
-      <div className="max-w-5xl mx-auto my-0 relative h-11">
-        <ul className="flex h-11 items-center justify-between">
+    <header className="bg-black h-12 z-10 relative">
+      <div className="max-w-3xl mx-auto my-0 relative h-12">
+        <ul className="flex h-12 items-center gap-5">
+          <li className="font-bold text-lg flex-1">
+            <Link href={"/"}>
+              <span>KunHee Blog</span>
+            </Link>
+          </li>
           {menus.map((menu, i) => (
-            <li key={i}>
-              {menu.href ? (
+            <li key={i} className="logo">
+              {menu.href && (
                 <Link
                   href={`${menu.href}`}
                   className={`hover-underline-animation block ${
@@ -26,11 +31,21 @@ export default function Header() {
                 >
                   <span>{menu.name}</span>
                 </Link>
-              ) : (
-                <span>{menu.name}</span>
               )}
             </li>
           ))}
+
+          {/* <li>
+            <a href="#">
+              <span>Search</span>
+            </a>
+          </li> */}
+          {/* 모바일 메뉴 */}
+          {/* <li>
+            <a href="#">
+              <span>=</span>
+            </a>
+          </li> */}
         </ul>
       </div>
     </header>
