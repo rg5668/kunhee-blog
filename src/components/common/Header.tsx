@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { menus } from "@/constant";
+import { FaSearch } from "react-icons/fa";
 
 export default function Header() {
   const pathname = usePathname();
@@ -14,7 +15,7 @@ export default function Header() {
         <ul className="flex h-12 items-center gap-5">
           <li className="font-bold text-lg flex-1">
             <Link href={"/"}>
-              <span>KunHee Blog</span>
+              <span>Kunhee Blog</span>
             </Link>
           </li>
           {menus.map((menu, i) => (
@@ -35,11 +36,11 @@ export default function Header() {
             </li>
           ))}
 
-          {/* <li>
+          <li className="pr-1">
             <a href="#">
-              <span>Search</span>
+              <FaSearch size={"18px"} />
             </a>
-          </li> */}
+          </li>
           {/* 모바일 메뉴 */}
           {/* <li>
             <a href="#">
