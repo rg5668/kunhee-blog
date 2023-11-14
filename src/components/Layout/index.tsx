@@ -3,7 +3,9 @@ import { ChildrenProps } from "@/app/layout";
 export default function Layout({ children }: ChildrenProps) {
   return (
     <div className="relative">
-      <div className="max-w-3xl mx-auto my-2 pt-4">{children}</div>
+      <div className="relative max-w-3xl mx-auto mt-3 mb-14 pt-4">
+        {children}
+      </div>
     </div>
   );
 }
