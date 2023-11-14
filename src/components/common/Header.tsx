@@ -22,6 +22,10 @@ export default function Header() {
     (e: globalThis.MouseEvent | MouseEvent<HTMLAnchorElement>) => {
       e.stopPropagation();
       setIsSearchOpen(!isSearchOpen);
+
+      if (isSearchOpen) {
+        setSearchText("");
+      }
     },
     [isSearchOpen]
   );
@@ -47,7 +51,7 @@ export default function Header() {
         <div>
           <div
             className={`flex items-center gap-5 ${
-              isSearchOpen ? `invisible opacity-0` : ""
+              isSearchOpen ? `invisible opacity-0` : "header-wrap"
             }`}
           >
             <ul className="flex h-12 w-full items-center gap-5">
@@ -95,13 +99,13 @@ export default function Header() {
                   autoFocus
                   value={searchText || ""}
                   onChange={handleOnSearchText}
+                  onClick={(e) => e.stopPropagation()}
                 />
                 <a
                   href="#"
                   className="search-canceler"
                   onClick={handleOnSearch}
                 >
-                  {/* <FaWindowClose size={"18px"} /> */}
                   취소
                 </a>
               </div>
