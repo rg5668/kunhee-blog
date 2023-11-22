@@ -17,7 +17,7 @@ export default function ThemeSwitcher() {
   };
 
   return (
-    <div className='w-10 h-10 flex items-center justify-center'>
+    <div className='flex items-center justify-center'>
       {theme !== 'dark' ? (
         <button onClick={() => handleThemeChange('dark')}>
           <BsSun size='20' />
