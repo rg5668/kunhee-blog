@@ -10,8 +10,8 @@ export default function MainBanner() {
   const name = ['임건희', 'Kunhee'];
 
   return (
-    <div className='flex justify-between items-center relative -xs:block'>
-      <div className='flex flex-col text-3xl -md:text-2xl -sm:text-lg'>
+    <div className='flex justify-between items-center relative -xs:flex -xs:flex-col-reverse -xs:gap-4'>
+      <div className='flex flex-col text-3xl -md:text-2xl -sm:text-lg -xs:w-full -xs:items-center'>
         <span>안녕하세요!</span>
         <span>
           <strong>
@@ -26,7 +26,7 @@ export default function MainBanner() {
           </strong>{' '}
           입니다.
         </span>
-        <div className='text-base flex gap-2 mt-5'>
+        <div className='text-base flex gap-2 mt-5 -sm:text-xs'>
           <Link
             target='_blank'
             title={`Github 열기`}
@@ -61,7 +61,7 @@ export default function MainBanner() {
         width={0}
         height={0}
         unoptimized={true}
-        className='rounded-2xl w-[250px] h-[auto] -md:w-[200px] -sm:w-[155px]'
+        className='rounded-2xl w-[250px] h-[auto] -md:w-[230px] -sm:w-[170px]'
       />
     </div>
   );
