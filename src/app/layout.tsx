@@ -1,5 +1,5 @@
 import Header from '@/components/common/Header';
-import './globals.css';
+import '@/styles/globals.css';
 import type { Metadata } from 'next';
 import Nav from '@/components/common/Nav';
 import Button from '@/components/ui/Button';

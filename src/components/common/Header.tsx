@@ -64,7 +64,7 @@ export default function Header() {
 
   return (
     <header
-      className={`h-12 z-10 relative -md:px-3 ${
+      className={`h-12 z-10 relative w-full -md:px-3 ${
         isMenuing ? '-md:menuing -md:dark:bg-black -md:dark:before:bg-black' : ''
       }`}
     >
