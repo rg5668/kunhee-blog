@@ -1,5 +1,5 @@
-import PostList from "@/components/posts/PostList";
-import MainBanner from "@/components/common/MainBanner";
+import PostList from '@/components/posts/PostList';
+import MainBanner from '@/components/common/MainBanner';
 
 export default function Home() {
   return (

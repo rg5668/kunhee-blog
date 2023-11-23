@@ -11,10 +11,14 @@
     @apply text-black;
     @apply dark:bg-black;
     @apply dark:text-white;
+    @apply p-0;
+    @apply m-0;
   }
   main {
     @apply h-auto;
     @apply relative;
+    @apply p-0;
+    @apply m-0;
   }
 }
 
