@@ -1,11 +1,11 @@
 import Header from '@/components/common/Header';
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
-import Nav from '@/components/common/Nav';
 import Button from '@/components/ui/Button';
 import Footer from '@/components/common/Footer';
 import Providers from '@/libs/Providers';
 import Layout from '@/components/Layout';
+import { Search } from '@/components/common/Search';
 
 export const metadata: Metadata = {
   title: 'Kunhee Blog',
@@ -22,12 +22,11 @@ export default function RootLayout({ children }: ChildrenProps) {
       <body>
         <Providers>
           <Header />
-          <Nav />
           <main>
             <Layout>{children}</Layout>
+            <Button />
           </main>
           <Footer />
-          <Button />
         </Providers>
       </body>
     </html>

@@ -10,7 +10,6 @@ export const about = {
         'Components Storybook 운영 및 개발',
         '건설사(H사, P사) B2B 서비스 개발 (VODA 서비스 도입)',
       ],
-      portfolioLink: 'https://strong-sunshine-6c9.notion.site/VODA-c7356aa3fcc2414284dfff08f59cb793',
       webSiteLink: 'https://www.voda.vision/landing',
       skills: 'React.js · Next.js · Typescript · Recoil · Emotion · React-Query · Tailwind',
     },
