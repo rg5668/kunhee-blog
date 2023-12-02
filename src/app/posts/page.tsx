@@ -13,7 +13,7 @@ export default async function Posts() {
   ])) as unknown as PostProps;
   return (
     <>
-      <h1 className='pb-2 text-lg font-bold text-center underline underline-offset-4'>Posts</h1>
+      <h1 className='pb-10 text-lg font-bold text-center underline underline-offset-4'>Posts</h1>
       <PostList posts={posts} category={category} />
     </>
   );
