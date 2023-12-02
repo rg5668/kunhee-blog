@@ -5,7 +5,7 @@
 @layer base {
   body {
     @apply text-sm;
-    @apply select-none;
+    /* @apply select-none; */
     @apply relative;
     @apply bg-white;
     @apply text-black;
