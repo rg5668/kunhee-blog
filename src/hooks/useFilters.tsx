@@ -5,13 +5,11 @@ import { PostProps } from '@/types/post';
 import { MouseEvent, useCallback, useState } from 'react';
 import useWindowEvents from './useWindowEvents';
 
-export default function useFilters({ posts }: PostProps) {
+export default function useFilters({ posts, setCount }: PostProps) {
   const { isClick: isOpenFilters, setIsClick: setIsOpenFilters } = useWindowEvents({ scrollStop: false });
-
   const [postList, setPostList] = useState([...posts]);
   const [selected, setSelected] = useState('all');
   const [selectedFilter, setSelectedFilter] = useState(filterItems[0].name);
-  const [count, setCount] = useState(6);
 
   const handleTagSelected = useCallback(
     (tagName: string) => {
@@ -19,7 +17,7 @@ export default function useFilters({ posts }: PostProps) {
       setPostList(filteredPosts);
       setSelected(tagName);
       setSelectedFilter(filterItems[0].name);
-      setCount(6);
+      setCount && setCount(6);
     },
     [posts],
   );
@@ -53,20 +51,14 @@ export default function useFilters({ posts }: PostProps) {
     [isOpenFilters],
   );
 
-  const handlePlusPost = () => {
-    setCount((prev) => prev + 6);
-  };
-
   return {
     postList,
     selected,
     isOpenFilters,
     selectedFilter,
-    count,
     handleTagSelected,
     handleFilterSelected,
     handleOnFilterMenu,
-    handlePlusPost,
-    posts,
+    setPostList,
   };
 }

@@ -1,4 +1,4 @@
-import { MouseEvent } from 'react';
+import { ChangeEvent, Dispatch, MouseEvent, SetStateAction } from 'react';
 
 export interface PostType {
   slug: string;
@@ -16,6 +16,8 @@ export interface PostType {
 export interface PostProps {
   posts: PostType[];
   category?: string[];
+  setPostList?: Dispatch<SetStateAction<PostType[]>>;
+  setCount?: (value: number) => void;
 }
 
 export interface FilterProps {
@@ -24,4 +26,10 @@ export interface FilterProps {
   handleFilterSelected: (filterName: string) => void;
   handleOnFilterMenu: (e: globalThis.MouseEvent | MouseEvent<HTMLButtonElement | HTMLLIElement>) => void;
   postList: PostType[];
+}
+
+export interface SearchInputProps {
+  input: string;
+  handleOnChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleOnClearInput: () => void;
 }
