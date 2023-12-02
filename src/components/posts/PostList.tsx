@@ -14,7 +14,7 @@ import usePostMore from '@/hooks/usePostMore';
 export default function PostList({ posts, category }: PostProps) {
   const { count, handlePlusPost, setCount } = usePostMore();
   const {
-    postList,
+    postList: data,
     selected,
     handleTagSelected,
     isOpenFilters,
@@ -41,13 +41,13 @@ export default function PostList({ posts, category }: PostProps) {
             selectedFilter={selectedFilter}
             handleFilterSelected={handleFilterSelected}
             handleOnFilterMenu={handleOnFilterMenu}
-            postList={postList}
+            postList={data}
           />
         </>
       )}
       <article className='flex flex-wrap gap-3 -xs:justify-center'>
-        {postList.length !== 0 ? (
-          postList.slice(0, count).map((post, i) => <Post key={i} post={post} />)
+        {data.length !== 0 ? (
+          data.slice(0, count).map((post, i) => <Post key={i} post={post} />)
         ) : (
           <div className='flex justify-center w-full h-[360px] items-center flex-col gap-3 border rounded-lg font-bold text-base text-gray-300'>
             <CiFileOff className='w-12 h-12' />
@@ -55,7 +55,7 @@ export default function PostList({ posts, category }: PostProps) {
           </div>
         )}
       </article>
-      {postList.length !== 0 && postList.length >= count && (
+      {data.length !== 0 && data.length >= count && (
         <div className='flex justify-center pt-5 pb-8 -md:text-sm -sm:text-xs'>
           <button
             onClick={handlePlusPost}

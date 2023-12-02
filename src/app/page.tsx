@@ -1,7 +1,7 @@
-import MainBanner from '@/components/common/MainBanner';
-import PostList from '@/components/posts/PostList';
 import { getAllPosts } from '@/service/posts';
 import { PostProps } from '@/types/post';
+import MainBanner from '@/components/common/MainBanner';
+import PostList from '@/components/posts/PostList';
 
 export default async function Home() {
   const { posts, category } = (await getAllPosts([

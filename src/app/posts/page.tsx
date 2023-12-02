@@ -1,6 +1,6 @@
-import PostList from '@/components/posts/PostList';
 import { getAllPosts } from '@/service/posts';
 import { PostProps } from '@/types/post';
+import PostList from '@/components/posts/PostList';
 
 export default async function Posts() {
   const { posts, category } = (await getAllPosts([
