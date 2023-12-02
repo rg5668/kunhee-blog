@@ -43,7 +43,7 @@ export default function PostList({ posts, category }: PostProps) {
           />
         </>
       )}
-      <div className='flex flex-wrap gap-3 -xs:justify-center'>
+      <article className='flex flex-wrap gap-3 -xs:justify-center'>
         {postList.length !== 0 ? (
           postList.slice(0, count).map((post, i) => <Post key={i} post={post} />)
         ) : (
@@ -52,7 +52,7 @@ export default function PostList({ posts, category }: PostProps) {
             <span>게시글이 없습니다.</span>
           </div>
         )}
-      </div>
+      </article>
       {postList.length !== 0 && postList.length >= count && (
         <div className='flex justify-center pt-5 pb-8 -md:text-sm -sm:text-xs'>
           <button
