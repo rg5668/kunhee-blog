@@ -11,6 +11,7 @@ import ScrollToButton from '@/components/ui/ScrollToButton';
 export const metadata: Metadata = {
   title: 'Kunhee Blog',
   description: 'Kunhee Blog App',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
   icons: {
     icon: [
       {
