@@ -1,5 +1,6 @@
 import MainBanner from '@/components/common/MainBanner';
 import PostList from '@/components/posts/PostList';
+import Search from '@/components/ui/SearchInput';
 import { getAllPosts } from '@/service/posts';
 import { PostProps } from '@/types/post';
 
