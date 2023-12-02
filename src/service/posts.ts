@@ -3,6 +3,7 @@ import { promises as fs } from 'fs';
 import matter from 'gray-matter';
 import { cache } from 'react';
 import { PostProps } from '@/types/post';
+import { category } from '@/constant/post';
 
 const postsDirectory = path.join(process.cwd(), '__posts');
 
@@ -19,7 +20,6 @@ export async function getPostSlugs() {
   const flattenedFiles = allFiles.flat();
 
   return {
-    subdirectories,
     files: flattenedFiles,
   };
 }
@@ -56,7 +56,7 @@ export async function getPostBySlug(slug: string, fields: string[] = []) {
   }
 }
 export const getAllPosts = cache(async (fields: string[] = []) => {
-  const { subdirectories, files } = await getPostSlugs();
+  const { files } = await getPostSlugs();
 
   const posts = await Promise.all(
     files.map(async (filePath: string) => {
@@ -67,7 +67,7 @@ export const getAllPosts = cache(async (fields: string[] = []) => {
 
   return {
     posts: posts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1)),
-    category: subdirectories,
+    category: category,
   };
 });
 
