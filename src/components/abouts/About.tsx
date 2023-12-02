@@ -1,45 +1,68 @@
 import { AboutProps } from '@/types/about';
-import Link from 'next/link';
 import React from 'react';
 import { CgWebsite } from 'react-icons/cg';
 import { IoLogoGithub } from 'react-icons/io';
 import { RiNotionFill } from 'react-icons/ri';
+import HoverLink from '../ui/HoverLink';
 
 export default function About({ data }: AboutProps) {
   return (
     <div>
-      <div className='flex gap-5 items-center -sm:flex-wrap w-full justify-center pb-3'>
-        <div className='min-w-1/4 flex flex-col gap-1 items-center'>
+      <div className='flex items-center justify-center w-full gap-5 pb-4 -sm:flex-wrap'>
+        <div className='flex flex-col items-center w-2/5 gap-1 min-w-2/5'>
           <span className='text-base font-bold'>{data.name}</span>
           <span>
             {data.startDate} ~ {data.endDate}
           </span>
           <span>{data.team}</span>
         </div>
-        <div className='w-3/4'>
-          <div className='pl-5 flex flex-col gap-1 break-keep'>
+        <div className='w-3/5 -md:text-center -md:w-full'>
+          <div className='flex flex-col gap-1 pl-5 break-keep'>
             {data.description?.map((desc) => (
               <span>- {desc}</span>
             ))}
-            {data.skills && <span className='pt-2'>사용 기술: {data.skills}</span>}
+            <div className='flex flex-wrap gap-2 mt-2 -md:justify-center'>
+              {data.skills &&
+                data.skills.map((skill) => (
+                  <span className='inline-block px-2 py-1 text-xs border rounded-xl'>{skill}</span>
+                ))}
+            </div>
           </div>
         </div>
       </div>
-      <div className='flex gap-2 justify-end'>
-        {data.portfolioLink && (
-          <Link href={data.portfolioLink} title={`${data.name} Web Site 이동`}>
-            <RiNotionFill className='w-5 h-5' />
-          </Link>
-        )}
+      <div className='flex justify-end gap-2 -sm:justify-center'>
         {data.webSiteLink && (
-          <Link href={data.webSiteLink} title={`${data.name} Web Site 이동`}>
+          <HoverLink
+            href={data.webSiteLink}
+            className='flex flex-col items-center'
+            animation
+            title={`${data.name} WebSite 이동`}
+          >
             <CgWebsite className='w-5 h-5' />
-          </Link>
+            WebSite
+          </HoverLink>
+        )}
+        {data.portfolioLink && (
+          <HoverLink
+            href={data.portfolioLink}
+            className='flex flex-col items-center'
+            animation
+            title={`${data.name} Portfolio 이동`}
+          >
+            <RiNotionFill className='w-5 h-5' />
+            Portfolio
+          </HoverLink>
         )}
         {data.githubLink && (
-          <Link href={data.githubLink} title={`${data.name} Github 이동`}>
+          <HoverLink
+            href={data.githubLink}
+            className='flex flex-col items-center'
+            animation
+            title={`${data.name} Github 이동`}
+          >
             <IoLogoGithub className='w-5 h-5' />
-          </Link>
+            Github
+          </HoverLink>
         )}
       </div>
     </div>

@@ -11,7 +11,7 @@ export const about = {
         '건설사(H사, P사) B2B 서비스 개발 (VODA 서비스 도입)',
       ],
       webSiteLink: 'https://www.voda.vision/landing',
-      skills: 'React.js · Next.js · Typescript · Recoil · Emotion · React-Query · Tailwind',
+      skills: ['React.js', 'Next.js', 'Typescript', 'Recoil', 'Emotion', 'React-Query', 'Tailwind'],
     },
     {
       name: '와이즈커머스',
@@ -20,7 +20,7 @@ export const about = {
       team: '프론트엔드 개발팀',
       description: ['Gentlemonster 반응형 웹 운영 및 개발'],
       webSiteLink: 'https://www.gentlemonster.com/kr/',
-      skills: 'JQuery',
+      skills: ['JQuery'],
     },
   ],
   toyProjects: [
@@ -30,11 +30,11 @@ export const about = {
       endDate: '2023.12',
       team: '개인',
       description: ['(현재 페이지)', 'Next를 이용하여 정적 블로그 개발 (기술 블로그 운영 목적)'],
-      // 추후 데이터 바꿔야함.
+      // todo 추후 데이터 바꿔야함.
       portfolioLink: 'https://strong-sunshine-6c9.notion.site/3D-Model-Control-e2bf8e47349d4fd89d24871c848e99d8',
       webSiteLink: 'https://3d-modeling-rg5668.vercel.app/',
       githubLink: 'https://github.com/rg5668/3d-modeling',
-      skills: 'React.js · Next.js · Typescript · Tailwind',
+      skills: ['React.js', 'Next.js', 'Typescript', 'Tailwind'],
     },
     {
       name: '3D-Modeling',
@@ -49,7 +49,7 @@ export const about = {
       portfolioLink: 'https://strong-sunshine-6c9.notion.site/3D-Model-Control-e2bf8e47349d4fd89d24871c848e99d8',
       webSiteLink: 'https://3d-modeling-rg5668.vercel.app/',
       githubLink: 'https://github.com/rg5668/3d-modeling',
-      skills: 'React.js · Typescript',
+      skills: ['React.js', 'Typescript'],
     },
   ],
   others: [

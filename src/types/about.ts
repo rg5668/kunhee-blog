@@ -7,7 +7,7 @@ export interface About {
   webSiteLink?: string;
   portfolioLink?: string;
   githubLink?: string;
-  skills?: string;
+  skills?: string[];
 }
 
 export interface AboutProps {
