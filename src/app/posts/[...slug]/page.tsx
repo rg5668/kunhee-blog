@@ -1,11 +1,10 @@
 import NotFound from '@/app/not-found';
-import { getAllPosts, getPost, getPostBySlug } from '@/service/posts';
+import { getPost } from '@/service/posts';
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
 import Image from 'next/image';
 import { BsStars } from 'react-icons/bs';
-import { PostProps, PostType } from '@/types/post';
-import Link from 'next/link';
+import { PostType } from '@/types/post';
 import PostBox from '@/components/posts/PostBox';
 
 interface PostSlug {
