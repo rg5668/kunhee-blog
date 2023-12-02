@@ -1,12 +1,12 @@
 import Header from '@/components/common/Header';
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
-import ScrollToButton from '@/components/ui/ScrollToButton';
 import Footer from '@/components/common/Footer';
 import Layout from '@/components/Layout';
-import ThemeProviders from '@/providers/ThemeProviders';
 import { Suspense } from 'react';
 import Spinner from '@/components/ui/Spinner';
+import ThemeProviders from '@/providers/ThemeProviders';
+import ScrollToButton from '@/components/ui/ScrollToButton';
 
 export const metadata: Metadata = {
   title: 'Kunhee Blog',
