@@ -13,8 +13,8 @@ export default function Post({ post }: { post: PostType }) {
         <Image
           src={post.coverImage ? post.coverImage : '/assets/no_image.png'}
           alt={''}
-          width={200}
-          height={200}
+          width={300}
+          height={300}
           className='w-full h-auto border-b rounded-t-2xl'
           priority
         />
@@ -22,10 +22,10 @@ export default function Post({ post }: { post: PostType }) {
         <span className='h-auto px-3 py-2 overflow-hidden text-base font-bold -md:text-sm line-clamp-2'>
           {post.title}
         </span>
-        <span className='text-sm -md:text-xs px-3 overflow-hidden min-h-[66px] -md:min-h-[30px] line-clamp-2'>
+        <span className='text-sm -md:text-xs px-3 overflow-hidden min-h-[60px] -md:min-h-[30px] line-clamp-2'>
           {post.description && post.description}
         </span>
-        <span className='opacity-[0.7] pl-3 pb-3 -sm:text-xs'>{post.date ?? post.team}</span>
+        <span className='opacity-[0.7] pl-3 pb-3 -sm:text-xs pt-1'>{post.date ?? post.team}</span>
       </div>
     </Link>
   );

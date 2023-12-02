@@ -4,25 +4,25 @@ import { about } from '@/constant/about';
 
 export default function AboutList() {
   return (
-    <div>
-      <div className='border-b pt-2 pb-8 mb-8 gap-4 flex flex-col -sm:items-center'>
-        <span className='text-lg font-bold mb-3'>Careers</span>
+    <article>
+      <div className='flex flex-col gap-4 pt-2 pb-8 mb-8 border-b -sm:items-center'>
+        <span className='mb-3 text-lg font-bold'>Careers</span>
         {about.careers.map((career, i) => (
           <About key={i} data={career} />
         ))}
       </div>
-      <div className='border-b pt-2 pb-8 mb-8 gap-4 flex flex-col -sm:items-center'>
-        <span className='text-lg font-bold mb-3'>ToyProjects</span>
+      <div className='flex flex-col gap-4 pt-2 pb-8 mb-8 border-b -sm:items-center'>
+        <span className='mb-3 text-lg font-bold'>ToyProjects</span>
         {about.toyProjects.map((project, i) => (
           <About key={i} data={project} />
         ))}
       </div>
-      <div className='gap-4 flex flex-col -sm:items-center'>
-        <span className='text-lg font-bold mb-3'>Others</span>
+      <div className='flex flex-col gap-4 -sm:items-center'>
+        <span className='mb-3 text-lg font-bold'>Others</span>
         {about.others.map((other, i) => (
           <About key={i} data={other} />
         ))}
       </div>
-    </div>
+    </article>
   );
 }

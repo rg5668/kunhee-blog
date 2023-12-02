@@ -3,10 +3,10 @@ import MainBanner from '@/components/common/MainBanner';
 
 export default function About() {
   return (
-    <div>
-      <h1 className='text-lg font-bold pb-4 mb-7 text-center border-b-2 underline underline-offset-4'>About</h1>
+    <>
+      <h1 className='pb-4 text-lg font-bold text-center underline border-b-2 mb-7 underline-offset-4'>About</h1>
       <MainBanner />
       <AboutList />
-    </div>
+    </>
   );
 }
