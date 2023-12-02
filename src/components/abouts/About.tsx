@@ -18,13 +18,15 @@ export default function About({ data }: AboutProps) {
         </div>
         <div className='w-3/5 -md:text-center -md:w-full'>
           <div className='flex flex-col gap-1 pl-5 break-keep'>
-            {data.description?.map((desc) => (
-              <span>- {desc}</span>
+            {data.description?.map((desc, i) => (
+              <span key={i}>- {desc}</span>
             ))}
             <div className='flex flex-wrap gap-2 mt-2 -md:justify-center'>
               {data.skills &&
-                data.skills.map((skill) => (
-                  <span className='inline-block px-2 py-1 text-xs border rounded-xl'>{skill}</span>
+                data.skills.map((skill, i) => (
+                  <span key={i} className='inline-block px-2 py-1 text-xs border rounded-xl'>
+                    {skill}
+                  </span>
                 ))}
             </div>
           </div>

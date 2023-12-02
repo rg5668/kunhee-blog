@@ -11,6 +11,14 @@ import ScrollToButton from '@/components/ui/ScrollToButton';
 export const metadata: Metadata = {
   title: 'Kunhee Blog',
   description: 'Kunhee Blog App',
+  icons: {
+    icon: [
+      {
+        rel: 'icon',
+        url: '/favicon.png',
+      },
+    ],
+  },
 };
 
 export type ChildrenProps = {

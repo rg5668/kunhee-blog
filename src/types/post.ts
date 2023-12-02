@@ -2,7 +2,7 @@ import { ChangeEvent, Dispatch, MouseEvent, SetStateAction } from 'react';
 
 export interface PostType {
   slug: string;
-  category: string[];
+  category: string[] | string;
   title: string;
   date: string;
   coverImage?: string;

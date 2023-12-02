@@ -8,7 +8,6 @@ import useFilters from '@/hooks/useFilters';
 import Filters from '../ui/Filters';
 import Tab from '../ui/Tab';
 import SearchInput from '../ui/SearchInput';
-import { ChangeEvent, useState } from 'react';
 import useSearch from '@/hooks/useSearch';
 import usePostMore from '@/hooks/usePostMore';
 
@@ -24,7 +23,10 @@ export default function PostList({ posts, category }: PostProps) {
     handleOnFilterMenu,
     setPostList,
   } = useFilters({ posts, setCount });
-  const { input, handleOnChange, handleOnClearInput } = useSearch({ posts, setPostList });
+  const { input, handleOnChange, handleOnClearInput } = useSearch({
+    posts: selected === 'all' ? [...posts] : posts.filter((v) => v.slug.startsWith(selected)),
+    setPostList,
+  });
 
   return (
     <>
@@ -32,7 +34,7 @@ export default function PostList({ posts, category }: PostProps) {
         <>
           <SearchInput input={input} handleOnChange={handleOnChange} handleOnClearInput={handleOnClearInput} />
           <div className='py-5 border-b-2'>
-            <Tab menus={category} posts={postList} handleTagSelected={handleTagSelected} selected={selected} />
+            <Tab menus={category} posts={posts} handleTagSelected={handleTagSelected} selected={selected} />
           </div>
           <Filters
             isOpenFilters={isOpenFilters}

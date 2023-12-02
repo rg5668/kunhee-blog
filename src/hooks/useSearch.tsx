@@ -20,7 +20,7 @@ export default function useSearch({ posts, setPostList }: PostProps) {
         );
       }
     },
-    [posts],
+    [posts, setPostList],
   );
 
   const handleOnClearInput = () => {

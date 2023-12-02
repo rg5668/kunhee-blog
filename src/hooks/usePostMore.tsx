@@ -5,7 +5,7 @@ export default function usePostMore() {
 
   const handlePlusPost = useCallback(() => {
     setCount((prev) => prev + 6);
-  }, [count]);
+  }, []);
 
   return {
     count,
