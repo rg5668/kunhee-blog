@@ -4,7 +4,7 @@ import useWindowEvents from '@/hooks/useWindowEvents';
 import { menus } from '@/constant/header';
 
 export default function ResponsiveMenu({ startPathname }: { startPathname: string }) {
-  const { isClick: isMenuing } = useWindowEvents();
+  const { isClick: isMenuing } = useWindowEvents({ scrollStop: true });
   return (
     <div className={`hidden -md:block ${!isMenuing ? 'clone-menu' : ''}`}>
       <ul className='dark:bg-black menu'>

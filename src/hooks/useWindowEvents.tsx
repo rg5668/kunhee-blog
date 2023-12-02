@@ -2,7 +2,11 @@
 
 import React, { MouseEvent, useCallback, useEffect, useState } from 'react';
 
-export default function useWindowEvents() {
+interface WindowEventsProps {
+  scrollStop: boolean;
+}
+
+export default function useWindowEvents({ scrollStop }: WindowEventsProps) {
   const [isClick, setIsClick] = useState(false);
   const handleOnClick = useCallback(
     (e: globalThis.MouseEvent | MouseEvent<HTMLButtonElement>) => {
@@ -15,10 +19,13 @@ export default function useWindowEvents() {
   useEffect(() => {
     if (isClick) {
       window.addEventListener('click', (e) => handleOnClick(e));
-
-      document.body.classList.add('stopScroll');
+      {
+        scrollStop && document.body.classList.add('stopScroll');
+      }
     } else {
-      document.body.classList.remove('stopScroll');
+      {
+        scrollStop && document.body.classList.remove('stopScroll');
+      }
       window.removeEventListener('click', (e) => handleOnClick(e));
     }
     return () => {
@@ -26,5 +33,5 @@ export default function useWindowEvents() {
     };
   }, [handleOnClick, isClick]);
 
-  return { isClick, handleOnClick };
+  return { isClick, setIsClick, handleOnClick };
 }
