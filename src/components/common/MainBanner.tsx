@@ -1,10 +1,7 @@
 'use client';
 import Image from 'next/image';
 import ReactRotatingText from 'react-rotating-text';
-import Link from 'next/link';
-import { IoLogoGithub } from 'react-icons/io';
-import { CgWebsite } from 'react-icons/cg';
-import { FaLinkedin, FaReact } from 'react-icons/fa';
+import { FaReact } from 'react-icons/fa';
 import { TbBrandNextjs } from 'react-icons/tb';
 import { bannerLink, mainBanner } from '@/constant/banner';
 import HoverLink from '../ui/HoverLink';

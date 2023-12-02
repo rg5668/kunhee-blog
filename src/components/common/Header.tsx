@@ -11,7 +11,7 @@ import ResponsiveMenu from './ResponsiveMenu';
 export default function Header() {
   const pathname = usePathname();
   const startPathname = pathname.split('/', 2).join('/');
-  const { isClick: isMenuing, handleOnClick: handleOnMenu } = useWindowEvents();
+  const { isClick: isMenuing, handleOnClick: handleOnMenu } = useWindowEvents({ scrollStop: true });
 
   return (
     <header
