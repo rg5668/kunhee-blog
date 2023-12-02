@@ -31,7 +31,7 @@ export default function useWindowEvents({ scrollStop }: WindowEventsProps) {
     return () => {
       window.removeEventListener('click', handleOnClick);
     };
-  }, [handleOnClick, isClick]);
+  }, [handleOnClick, isClick, scrollStop]);
 
   return { isClick, setIsClick, handleOnClick };
 }

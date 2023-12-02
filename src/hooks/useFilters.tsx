@@ -19,7 +19,7 @@ export default function useFilters({ posts, setCount }: PostProps) {
       setSelectedFilter(filterItems[0].name);
       setCount && setCount(6);
     },
-    [posts],
+    [posts, setCount],
   );
 
   const handleFilterSelected = useCallback(
@@ -40,7 +40,7 @@ export default function useFilters({ posts, setCount }: PostProps) {
       setSelectedFilter(filterName);
       setIsOpenFilters(!isOpenFilters);
     },
-    [isOpenFilters, postList],
+    [isOpenFilters, postList, setIsOpenFilters],
   );
 
   const handleOnFilterMenu = useCallback(
@@ -48,7 +48,7 @@ export default function useFilters({ posts, setCount }: PostProps) {
       e.stopPropagation();
       setIsOpenFilters(!isOpenFilters);
     },
-    [isOpenFilters],
+    [isOpenFilters, setIsOpenFilters],
   );
 
   return {
