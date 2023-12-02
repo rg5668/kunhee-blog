@@ -8,10 +8,16 @@ import Spinner from '@/components/ui/Spinner';
 import ThemeProviders from '@/providers/ThemeProviders';
 import ScrollToButton from '@/components/ui/ScrollToButton';
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export const metadata: Metadata = {
   title: 'Kunhee Blog',
   description: 'Kunhee Blog App',
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+  viewport: viewport,
   icons: {
     icon: [
       {
