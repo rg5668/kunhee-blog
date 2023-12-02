@@ -1,8 +1,8 @@
 export default function Footer() {
   return (
-    <footer className='border-t h-12 flex justify-center items-center'>
+    <footer className='flex items-center justify-center h-12 border-t'>
       <p className='text-sm'>
-        © 2023 powered by <strong>Kunhee</strong>
+        © {new Date().getFullYear()} powered by <strong>Kunhee</strong>
       </p>
     </footer>
   );
