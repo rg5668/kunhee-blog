@@ -10,12 +10,15 @@
   },
   "dependencies": {
     "@mui/material": "^5.14.18",
+    "gray-matter": "^4.0.3",
     "next": "14.0.1",
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.11.0",
-    "react-rotating-text": "^1.4.1"
+    "react-rotating-text": "^1.4.1",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1"
   },
   "devDependencies": {
     "@types/node": "^20",
