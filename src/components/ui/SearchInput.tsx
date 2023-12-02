@@ -8,7 +8,7 @@ import React from 'react';
 function SearchInput({ input, handleOnChange, handleOnClearInput }: SearchInputProps) {
   return (
     <div className='relative flex justify-center w-full pb-5'>
-      <div className='relative flex items-center w-[90%] gap-3 bg-white border rounded-lg'>
+      <div className='relative flex items-center w-full gap-3 bg-white border rounded-lg'>
         <IoSearch className='w-6 h-6 ml-3 text-black opacity-80' />
         <input
           className='w-full py-3 pr-4 text-black bg-white rounded-lg outline-none'
