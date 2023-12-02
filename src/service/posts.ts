@@ -2,6 +2,7 @@ import path from 'path';
 import { promises as fs } from 'fs';
 import matter from 'gray-matter';
 import { cache } from 'react';
+import { PostProps } from '@/types/post';
 
 const postsDirectory = path.join(process.cwd(), '__posts');
 
@@ -47,7 +48,6 @@ export async function getPostBySlug(slug: string, fields: string[] = []) {
         items[field] = data[field];
       }
     });
-
     return items;
   } catch (error) {
     return {
@@ -70,3 +70,30 @@ export const getAllPosts = cache(async (fields: string[] = []) => {
     category: subdirectories,
   };
 });
+
+export const getPost = async (slug: string) => {
+  try {
+    const allPosts = (await getAllPosts([
+      'title',
+      'slug',
+      'description',
+      'date',
+      'lastmod',
+      'weight',
+      'content',
+    ])) as unknown as PostProps;
+    const { posts } = allPosts;
+    const post = posts.find((post) => post.slug === slug);
+
+    if (!post) throw new Error(`해당하는 포스트를 찾을 수 없습니다.`);
+
+    const index = posts.indexOf(post);
+    const prev = index > 0 ? posts[index - 1] : null;
+    const next = index < posts.length ? posts[index + 1] : null;
+    return { ...post, next, prev, totalLength: posts.length, currentIndex: index + 1 };
+  } catch (error) {
+    return {
+      slug: '404',
+    };
+  }
+};

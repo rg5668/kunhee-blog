@@ -11,6 +11,10 @@ export interface PostType {
   description?: string;
   team?: string;
   targetLink?: string;
+  next?: PostType;
+  prev?: PostType;
+  currentIndex?: number;
+  totalLength?: number;
 }
 
 export interface PostProps {
@@ -18,6 +22,10 @@ export interface PostProps {
   category?: string[];
   setPostList?: Dispatch<SetStateAction<PostType[]>>;
   setCount?: (value: number) => void;
+}
+
+export interface PostBoxProps {
+  post: PostType;
 }
 
 export interface FilterProps {

@@ -1,22 +1,22 @@
 import NotFound from '@/app/not-found';
-import { getPostBySlug } from '@/service/posts';
+import { getAllPosts, getPost, getPostBySlug } from '@/service/posts';
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
 import Image from 'next/image';
 import { BsStars } from 'react-icons/bs';
+import { PostProps, PostType } from '@/types/post';
+import Link from 'next/link';
+import PostBox from '@/components/posts/PostBox';
 
-export default async function Post({ params: { slug } }: { params: { slug: string[] } }) {
-  const post = await getPostBySlug(slug.join('/'), [
-    'title',
-    'slug',
-    'description',
-    'date',
-    'lastmod',
-    'weight',
-    'content',
-    'fileName',
-  ]);
+interface PostSlug {
+  params: {
+    slug: string[];
+  };
+}
 
+export default async function Post({ params }: PostSlug) {
+  const { slug } = params;
+  const post = (await getPost(slug.join('/'))) as PostType;
   if (post.slug === '404') return <NotFound />;
   return (
     <>
@@ -104,6 +104,7 @@ export default async function Post({ params: { slug } }: { params: { slug: strin
       >
         {post.content}
       </ReactMarkdown>
+      <PostBox post={post} />
     </>
   );
 }
