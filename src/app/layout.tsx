@@ -1,11 +1,12 @@
 import Header from '@/components/common/Header';
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
-import Button from '@/components/ui/Button';
+import ScrollToButton from '@/components/ui/ScrollToButton';
 import Footer from '@/components/common/Footer';
-import Providers from '@/libs/Providers';
 import Layout from '@/components/Layout';
-import { Search } from '@/components/common/Search';
+import ThemeProviders from '@/providers/ThemeProviders';
+import { Suspense } from 'react';
+import Spinner from '@/components/ui/Spinner';
 
 export const metadata: Metadata = {
   title: 'Kunhee Blog',
@@ -20,14 +21,16 @@ export default function RootLayout({ children }: ChildrenProps) {
   return (
     <html lang='ko'>
       <body>
-        <Providers>
+        <ThemeProviders>
           <Header />
-          <main>
-            <Layout>{children}</Layout>
-            <Button />
-          </main>
+          <Suspense fallback={<Spinner />}>
+            <main>
+              <Layout>{children}</Layout>
+            </main>
+          </Suspense>
+          <ScrollToButton />
           <Footer />
-        </Providers>
+        </ThemeProviders>
       </body>
     </html>
   );
