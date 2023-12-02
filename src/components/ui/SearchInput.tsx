@@ -13,7 +13,6 @@ function SearchInput({ input, handleOnChange, handleOnClearInput }: SearchInputP
         <input
           className='w-full py-3 pr-4 text-black bg-white rounded-lg outline-none'
           placeholder='검색어를 입력하세요.'
-          autoFocus
           value={input}
           onChange={handleOnChange}
         />
