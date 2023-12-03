@@ -81,6 +81,7 @@ export const getPost = async (slug: string) => {
       'lastmod',
       'weight',
       'content',
+      'coverImage',
     ])) as unknown as PostProps;
     const { posts } = allPosts;
     const post = posts.find((post) => post.slug === slug);
