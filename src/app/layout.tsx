@@ -18,6 +18,7 @@ export function generateViewport(): Viewport {
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL(meta.url),
   title: {
     template: `%s | ${meta.blog_title}`,
     default: `Home | ${meta.blog_title}`,

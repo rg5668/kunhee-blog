@@ -4,6 +4,7 @@ import { playgrounds } from '@/constant/playground';
 import { PostType } from '@/types/post';
 
 export const metadata = {
+  metadataBase: new URL(meta.url),
   title: meta.playground_title,
   description: meta.playground_description,
   openGraph: {

@@ -18,6 +18,7 @@ interface PostSlug {
 export async function generateMetadata({ params: { slug } }: PostSlug): Promise<Metadata> {
   const post = (await getPost(slug.join('/'))) as PostType;
   return {
+    metadataBase: new URL(meta.url),
     title: post.title,
     description: post.description,
     openGraph: {
@@ -58,6 +59,7 @@ export default async function Post({ params }: PostSlug) {
   const { slug } = params;
   const post = (await getPost(slug.join('/'))) as PostType;
   if (post.slug === '404') return <NotFound />;
+
   return (
     <>
       <h1>{post.title}</h1>

@@ -4,6 +4,7 @@ import PostList from '@/components/posts/PostList';
 import { image_url, meta } from '@/constant/meta';
 
 export const metadata = {
+  metadataBase: new URL(meta.url),
   title: meta.posts_title,
   description: meta.posts_description,
   openGraph: {

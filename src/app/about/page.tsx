@@ -3,6 +3,7 @@ import MainBanner from '@/components/common/MainBanner';
 import { image_url, meta } from '@/constant/meta';
 
 export const metadata = {
+  metadataBase: new URL(meta.url),
   title: meta.about_title,
   description: meta.about_description,
   openGraph: {

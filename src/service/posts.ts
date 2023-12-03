@@ -82,16 +82,17 @@ export const getPost = async (slug: string) => {
       'weight',
       'content',
       'coverImage',
+      'category',
     ])) as unknown as PostProps;
     const { posts } = allPosts;
-    const post = posts.find((post) => post.slug === slug);
-
+    const filterPost = posts.filter((v) => v.slug.startsWith(slug.split('/')[0]));
+    const post = filterPost.find((post) => post.slug === slug);
     if (!post) throw new Error(`해당하는 포스트를 찾을 수 없습니다.`);
 
-    const index = posts.indexOf(post);
-    const prev = index > 0 ? posts[index - 1] : null;
-    const next = index < posts.length ? posts[index + 1] : null;
-    return { ...post, next, prev, totalLength: posts.length, currentIndex: index + 1 };
+    const index = filterPost.indexOf(post);
+    const prev = index > 0 ? filterPost[index - 1] : null;
+    const next = index < filterPost.length ? filterPost[index + 1] : null;
+    return { ...post, next, prev, totalLength: filterPost.length, currentIndex: index + 1 };
   } catch (error) {
     return {
       slug: '404',
