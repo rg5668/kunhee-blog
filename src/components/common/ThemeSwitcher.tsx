@@ -20,11 +20,11 @@ export default function ThemeSwitcher() {
     <div className='flex items-center justify-center'>
       {theme !== 'dark' ? (
         <button onClick={() => handleThemeChange('dark')}>
-          <BsSun size='20' />
+          <BsSun className='w-5 h-5' />
         </button>
       ) : (
         <button onClick={() => handleThemeChange('light')}>
-          <BsMoon size='20' />
+          <BsMoon className='w-5 h-5' />
         </button>
       )}
     </div>

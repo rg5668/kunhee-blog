@@ -20,8 +20,8 @@ export default function Header() {
       } `}
     >
       <div className='relative h-12 max-w-3xl mx-auto my-0 bg-white -md:px-3 dark:bg-black'>
-        <div className={`flex h-12 items-center header-wrap`}>
-          <Link href={'/'} className='flex flex-1 text-lg font-bold'>
+        <div className={`flex justify-between h-12 items-center header-wrap`}>
+          <Link href={'/'} className='text-lg font-bold'>
             <span>Kunhee Blog</span>
           </Link>
           <div className='flex items-center gap-5'>
