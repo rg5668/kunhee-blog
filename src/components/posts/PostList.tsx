@@ -36,15 +36,25 @@ export default function PostList({ posts, category }: PostProps) {
           <div className='py-5 border-b-2'>
             <Tab menus={category} posts={posts} handleTagSelected={handleTagSelected} selected={selected} />
           </div>
-          <Filters
-            isOpenFilters={isOpenFilters}
-            selectedFilter={selectedFilter}
-            handleFilterSelected={handleFilterSelected}
-            handleOnFilterMenu={handleOnFilterMenu}
-            postList={data}
-          />
+          <div className='flex items-center justify-between'>
+            <span className='text-sm'>
+              {input.length !== 0 && (
+                <>
+                  검색 결과: <strong>{data.length}개</strong>
+                </>
+              )}
+            </span>
+            <Filters
+              isOpenFilters={isOpenFilters}
+              selectedFilter={selectedFilter}
+              handleFilterSelected={handleFilterSelected}
+              handleOnFilterMenu={handleOnFilterMenu}
+              postList={data}
+            />
+          </div>
         </>
       )}
+
       <article className='flex flex-wrap gap-3 -xs:justify-center'>
         {data.length !== 0 ? (
           data.slice(0, count).map((post, i) => <Post key={i} post={post} />)

@@ -39,6 +39,7 @@ export default function About({ data }: AboutProps) {
             className='flex flex-col items-center'
             animation
             title={`${data.name} WebSite 이동`}
+            target='_blank'
           >
             <CgWebsite className='w-5 h-5' />
             WebSite
@@ -50,6 +51,7 @@ export default function About({ data }: AboutProps) {
             className='flex flex-col items-center'
             animation
             title={`${data.name} Portfolio 이동`}
+            target='_blank'
           >
             <RiNotionFill className='w-5 h-5' />
             Portfolio
@@ -61,6 +63,7 @@ export default function About({ data }: AboutProps) {
             className='flex flex-col items-center'
             animation
             title={`${data.name} Github 이동`}
+            target='_blank'
           >
             <IoLogoGithub className='w-5 h-5' />
             Github

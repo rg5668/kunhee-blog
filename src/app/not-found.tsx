@@ -11,7 +11,7 @@ const NotFound = () => {
   const router = useRouter();
 
   return (
-    <div className='flex flex-col gap-5 items-center justify-center w-full relative top-[230px]'>
+    <div className='flex flex-col gap-5 items-center justify-center w-full relative top-[150px]'>
       <TbError404 className='w-28 h-28' />
       <h1 className='text-2xl font-bold'>해당 게시글이 없습니다.</h1>
       <div>
