@@ -10,15 +10,16 @@ export default function Post({ post }: { post: PostType }) {
       target={`${post.targetLink ? `_blank` : `_self`}`}
     >
       <div className='flex flex-col flex-wrap'>
-        <Image
-          src={post.coverImage ? post.coverImage : '/assets/no_image.png'}
-          alt={''}
-          width={300}
-          height={300}
-          className='w-full h-auto border-b rounded-t-2xl'
-          priority
-        />
-
+        <div className='w-full h-[200px] -sm:h-[200px] -xs:h-[150px]'>
+          <Image
+            src={post.coverImage ? post.coverImage : '/assets/no_image.png'}
+            alt={''}
+            width={300}
+            height={300}
+            className='object-cover w-full h-full border-b rounded-t-2xl'
+            priority
+          />
+        </div>
         <span className='h-auto px-3 py-2 overflow-hidden text-base font-bold -md:text-sm line-clamp-2'>
           {post.title}
         </span>
