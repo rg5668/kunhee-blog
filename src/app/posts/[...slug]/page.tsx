@@ -6,10 +6,51 @@ import Image from 'next/image';
 import { BsStars } from 'react-icons/bs';
 import { PostType } from '@/types/post';
 import PostBox from '@/components/posts/PostBox';
+import { Metadata } from 'next';
+import { image_url, meta } from '@/constant/meta';
 
 interface PostSlug {
   params: {
     slug: string[];
+  };
+}
+
+export async function generateMetadata({ params: { slug } }: PostSlug): Promise<Metadata> {
+  const post = (await getPost(slug.join('/'))) as PostType;
+  return {
+    title: post.title,
+    description: post.description,
+    openGraph: {
+      title: {
+        template: `${post.title}`,
+        default: `${post.title}`,
+      },
+      description: `${post.description}`,
+      url: `${meta.url}/${post.slug}`,
+      siteName: `${post.title}`,
+      images: [
+        {
+          url: `${post.coverImage}`,
+          width: 800,
+          height: 600,
+        },
+      ],
+      locale: 'ko_KR',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary',
+      title: {
+        template: `${post.title}`,
+        default: `${post.title}`,
+      },
+      description: `${post.description}`,
+      site: `${meta.url}/${post.slug}`,
+      images: {
+        url: `${post.coverImage}`,
+        alt: '',
+      },
+    },
   };
 }
 
