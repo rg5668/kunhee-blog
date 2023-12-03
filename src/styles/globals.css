@@ -3,9 +3,8 @@
 @tailwind utilities;
 
 @layer base {
+  html,
   body {
-    @apply text-sm;
-    /* @apply select-none; */
     @apply relative;
     @apply bg-white;
     @apply text-black;
@@ -116,7 +115,7 @@
 
   .menu-starter span {
     display: block;
-    width: 15px;
+    width: 18px;
     height: 1px;
     margin-bottom: 6px;
     transition: 0.3s;
