@@ -25,7 +25,7 @@ export default function Header() {
             <span>Kunhee Blog</span>
           </Link>
           <div className='flex items-center gap-5'>
-            <ul className='flex items-center justify-end flex-1 w-full gap-5 -md:hidden'>
+            <ul className='flex items-center justify-end flex-1 w-full gap-5 text-sm -md:hidden'>
               {menus.map((menu, i) => (
                 <li key={i} className='logo'>
                   {menu.href && (

@@ -26,6 +26,7 @@ export interface PostProps {
 
 export interface PostBoxProps {
   post: PostType;
+  prev?: boolean;
 }
 
 export interface FilterProps {

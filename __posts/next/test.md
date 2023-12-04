@@ -10,12 +10,6 @@ coverImage: /post_images/next/summer_dog.png
 
 # Heading 1
 
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
 ##### Heading 5
 
 ---
@@ -27,6 +21,8 @@ _Italics_
 **Bold**
 
 ---
+
+## Heading 2
 
 Tasks
 
@@ -53,11 +49,15 @@ Tasks
 
 ---
 
+### Heading 3
+
 > Quote
 >
 > Second line Quote
 
 ---
+
+#### Heading 4
 
 Standard link = https://www.linkedin.com/in/kh5668/
 [Custom Text Link](https://www.linkedin.com/in/kh5668/)
