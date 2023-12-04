@@ -1,3 +1,4 @@
+import { meta } from '@/constant/meta';
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
@@ -6,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://kunhee-blog.vercel.app/sitemap.xml',
+    sitemap: `${meta.url}/sitemap.xml`,
   };
 }
