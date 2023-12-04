@@ -68,8 +68,17 @@ export default async function Post({ params }: PostSlug) {
     <>
       <ProgressBar />
 
-      <article>
-        <h1>{post.title}</h1>
+      {post.coverImage && (
+        <Image
+          src={post.coverImage}
+          alt={''}
+          width={300}
+          height={300}
+          className='absolute top-[50px] w-full h-[140px] left-0 opacity-30 object-cover'
+        />
+      )}
+      <article className='relative'>
+        <h1 className='pt-10 text-2xl font-bold text-center'>{post.title}</h1>
         <ReactMarkdown
           remarkPlugins={[gfm]}
           components={{
@@ -81,11 +90,11 @@ export default async function Post({ params }: PostSlug) {
             strong: ({ children }) => <strong className='font-bold text-teal'>{children}</strong>,
             img: (image) => (
               <Image
-                className='object-cover w-auto my-1 max-h-80'
+                className='object-cover w-full my-1 max-h-80'
                 src={image.src || ''}
                 alt={image.alt || ''}
-                width={200}
-                height={200}
+                width={1000}
+                height={1000}
               />
             ),
             h1: ({ children }) => (
