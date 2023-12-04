@@ -2,7 +2,7 @@ export const playgrounds = [
   {
     title: 'Kunhee Blog',
     description: '2023.11 ~ 진행, Next에 SSG를 활용한 정적 블로그 개발',
-    targetLink: 'https://kunhee-blog-2kib.vercel.app',
+    targetLink: 'https://kunhee-blog.vercel.app',
     coverImage: '/assets/kunhee-blog.png',
     team: '개인',
   },
