@@ -3,3 +3,11 @@ export const pageview = (GA_MEASUREMENT_ID: string, url: string) => {
     page_path: url,
   });
 };
+
+export const event = (action: Gtag.EventNames, { event_category, event_label, value }: Gtag.EventParams) => {
+  window.gtag('event', action, {
+    event_category,
+    event_label,
+    value,
+  });
+};
