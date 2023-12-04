@@ -12,7 +12,7 @@ export default function ProgressBar() {
     if (scrollY === 0) return setWidth(0);
     const windowHeight = scrollHeight - clientHeight;
     const currentPercent = scrollY / windowHeight;
-    setWidth(currentPercent * 100);
+    setWidth(Math.max(0, Math.min(currentPercent * 100, 100)));
   }, 200);
 
   useEffect(() => {

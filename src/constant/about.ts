@@ -30,7 +30,7 @@ export const about = {
       team: '개인',
       description: ['(현재 페이지)', 'Next에 SSG를 활용한 정적 블로그 개발 (기술 블로그 운영 목적)'],
       portfolioLink: 'https://strong-sunshine-6c9.notion.site/Kunhee-Blog-87d2b935d38a456da9b7c41cbaa5d188?pvs=4',
-      webSiteLink: 'https://kunhee-blog.vercel.app/',
+      webSiteLink: 'https://www.kunheelim.com/',
       githubLink: 'https://github.com/rg5668/kunhee-blog',
       skills: ['Next.js', 'Typescript', 'Tailwind'],
     },
