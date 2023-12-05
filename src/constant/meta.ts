@@ -1,7 +1,7 @@
 export const image_url = '/logo-seo.png';
 export const meta = {
   url_all: ['/', 'posts', 'about', 'playground'],
-  url: 'https://www.kunheelim.com',
+  url: 'https://kunheelim.com',
 
   blog_title: 'Kunhee Blog',
   posts_title: 'Posts',
