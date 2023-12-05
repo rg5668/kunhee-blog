@@ -78,7 +78,7 @@ export default async function Post({ params }: PostSlug) {
         />
       )}
       <article className='relative'>
-        <h1 className='pt-10 text-2xl font-bold text-center'>{post.title}</h1>
+        <h1 className='py-10 text-2xl font-bold text-center'>{post.title}</h1>
         <ReactMarkdown
           remarkPlugins={[gfm]}
           components={{
