@@ -28,7 +28,7 @@ export default function MainBanner() {
           </strong>{' '}
           입니다.
         </span>
-        <div className='flex gap-3 mt-5 text-base -xs:text-xs -xs:flex-wrap -xs:justify-center'>
+        <div className='flex gap-3 mt-5 text-base -sm:text-sm -sm:flex-wrap -sm:justify-center'>
           {bannerLink.map((data, i) => (
             <div key={i}>
               <HoverLink
@@ -49,17 +49,19 @@ export default function MainBanner() {
         <Image
           src={'/assets/my_photo.png'}
           alt={'myphoto'}
-          width={200}
-          height={200}
+          width={0}
+          height={0}
           priority
+          sizes='100vw'
           className='relative top-[-50px] rounded-2xl w-[300px] h-[auto] -md:w-[250px] -sm:w-[180px]'
         />
         <Image
           src={'/assets/summer_dog.png'}
           alt={'summerdog'}
-          width={200}
-          height={200}
+          width={0}
+          height={0}
           priority
+          sizes='100vw'
           className='absolute right-[180px] bottom-[30px] rounded-2xl w-[120px] h-[auto] -md:w-[100px] -sm:w-[70px] -md:right-[150px] -sm:right-[110px] -sm:top-[105px] -xs:left-[0]'
         />
       </div>
