@@ -22,8 +22,9 @@ export default function PostBox({ post, prev }: PostBoxProps) {
         <div className={`flex flex-wrap -sm:justify-center items-center gap-4 ${prev && 'flex-row-reverse'}`}>
           <Image
             src={post.coverImage ? post.coverImage : '/assets/no_image.png'}
-            width={100}
-            height={100}
+            width={0}
+            height={0}
+            sizes='100vw'
             alt=''
             priority
             className='w-[100px] h-[100px] object-cover'

@@ -9,6 +9,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const urls = [...slugs, ...meta.url_all.map((v) => (v === '/' ? v.replace(v, '') : v))].map((url) => {
     return {
       url: `${meta.url}/${url}`,
+      lastModified: new Date(),
     };
   });
   return urls;

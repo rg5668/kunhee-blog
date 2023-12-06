@@ -12,6 +12,11 @@ export const bannerLink = [
     icon: icons({ className: 'h-5 w-5' }).IoLogoGithub,
   },
   {
+    name: 'Email',
+    href: 'mailto:rg4093@naver.com',
+    icon: icons({ className: 'h-5 w-5' }).MdOutlineEmail,
+  },
+  {
     name: 'LinkedIn',
     href: 'https://www.linkedin.com/in/kh5668',
     icon: icons({ className: 'h-5 w-5' }).FaLinkedin,
