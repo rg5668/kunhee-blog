@@ -72,9 +72,9 @@ export default async function Post({ params }: PostSlug) {
         <Image
           src={post.coverImage}
           alt={''}
-          width={0}
-          height={0}
-          sizes='100vw'
+          width={500}
+          height={500}
+          priority
           className='absolute top-[60px] w-full h-[160px] left-0 opacity-30 object-cover'
         />
       )}
@@ -94,9 +94,8 @@ export default async function Post({ params }: PostSlug) {
                 className='object-cover w-full my-1 max-h-80'
                 src={image.src || ''}
                 alt={image.alt || ''}
-                width={0}
-                height={0}
-                sizes='100vw'
+                width={500}
+                height={500}
                 priority
               />
             ),

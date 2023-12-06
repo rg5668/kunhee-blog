@@ -14,9 +14,8 @@ export default function Post({ post }: { post: PostType }) {
           <Image
             src={post.coverImage ? post.coverImage : '/assets/no_image.png'}
             alt={''}
-            width={0}
-            height={0}
-            sizes='100vw'
+            width={300}
+            height={300}
             className='object-cover w-full h-full border-b rounded-t-2xl'
             priority
           />
