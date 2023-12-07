@@ -1,5 +1,5 @@
 import { PostProps } from '@/types/post';
-import React, { ChangeEvent, useCallback, useState } from 'react';
+import { ChangeEvent, useCallback, useState } from 'react';
 
 export default function useSearch({ posts, setPostList }: PostProps) {
   const [input, setInput] = useState('');
@@ -10,11 +10,11 @@ export default function useSearch({ posts, setPostList }: PostProps) {
 
       if (setPostList) {
         const blankTrim = /\s+/g;
-        const inputText = e.target.value.replace(blankTrim, '');
+        const inputText = e.target.value.toLocaleUpperCase().replace(blankTrim, '');
 
         setPostList(
           posts.filter((post) => {
-            const formattedTitle = post.title.replace(blankTrim, '');
+            const formattedTitle = post.title.toLocaleUpperCase().replace(blankTrim, '');
             return formattedTitle.includes(inputText);
           }),
         );

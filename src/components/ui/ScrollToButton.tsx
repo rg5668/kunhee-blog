@@ -8,8 +8,12 @@ export default function ScrollToButton() {
   };
 
   return (
-    <button className='fixed bottom-4 right-4' id='to-top' onClick={scrollToTop}>
-      <FaCircleArrowUp className='w-7 h-7 border outline-none border-none font-bold' />
+    <button
+      className='fixed bg-black border rounded-full dark:bg-white bottom-4 right-4'
+      id='to-top'
+      onClick={scrollToTop}
+    >
+      <FaCircleArrowUp className='text-white border-none outline-none dark:text-black w-7 h-7' />
     </button>
   );
 }

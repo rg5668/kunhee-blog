@@ -32,15 +32,15 @@ export default function TableOfContents() {
 
   return (
     <>
-      <ReactResponsive minWidth={768}>
+      <ReactResponsive minWidth={1320}>
         <section className='fixed w-48 px-4 py-6 transition -md:hidden scrollbar-hide top-20 right-20'>
           <TocContent headingEls={headingEls} activeId={activeId} />
         </section>
       </ReactResponsive>
-      <ReactResponsive maxWidth={767}>
+      <ReactResponsive maxWidth={1319}>
         <button
           onClick={toggleModal}
-          className='fixed z-20 flex items-center justify-center p-1 transition border rounded-full shadow-lg right-3.5 hover:scale-105 bg-yellow border-slate bottom-14'
+          className='fixed z-20 flex items-center justify-center p-1 transition border rounded-full shadow-lg right-3.5 hover:scale-105 bg-yellow border-slate bottom-14 bg-white dark:bg-black'
         >
           {!modal ? <HiQueueList className='w-5 h-5' /> : <HiXMark className='w-5 h-5' />}
         </button>
@@ -50,7 +50,7 @@ export default function TableOfContents() {
               onClick={toggleModal}
               className='fixed top-0 bottom-0 left-0 right-0 z-20 w-full h-screen mx-auto overflow-hidden transition bg-black opacity-50'
             />
-            <section className='bg-white overflow-scroll transition z-20 p-6 fixed inset-0 m-auto w-10/12 h-fit max-h-[75%] border-2 border-slate bg-bg rounded-xl'>
+            <section className='bg-white text-black overflow-scroll transition z-20 p-6 fixed inset-0 m-auto w-10/12 h-fit max-h-[75%] border-2 border-slate bg-bg rounded-xl'>
               <TocContent headingEls={headingEls} activeId={activeId} />
             </section>
           </>
