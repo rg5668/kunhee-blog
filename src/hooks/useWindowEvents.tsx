@@ -1,6 +1,6 @@
 'use client';
 
-import React, { MouseEvent, useCallback, useEffect, useState } from 'react';
+import { MouseEvent, useCallback, useEffect, useState } from 'react';
 
 interface WindowEventsProps {
   scrollStop: boolean;
