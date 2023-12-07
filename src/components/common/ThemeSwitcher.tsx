@@ -6,7 +6,7 @@ import { BsSun, BsMoon } from 'react-icons/bs';
 
 export default function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const [, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
