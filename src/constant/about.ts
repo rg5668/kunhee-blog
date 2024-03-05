@@ -24,6 +24,28 @@ export const about = {
   ],
   toyProjects: [
     {
+      name: 'Smelu',
+      startDate: '2023.12',
+      endDate: '진행중',
+      team: '개인',
+      description: [
+        'ChatGPT API(Assistant)를 활용하여 향수를 분석(추천) 후 Naver Search Open API를 통해 바로 구매가 가능한 서비스',
+      ],
+      portfolioLink: 'https://strong-sunshine-6c9.notion.site/Smelu-1cfe4f44122e42f69868bccfd4622ab6',
+      webSiteLink: 'https://smelu.com',
+      skills: [
+        'Next.js',
+        'Typescript',
+        'Tailwind',
+        'React-Query',
+        'Prisma',
+        'Postgres',
+        'AWS RDS',
+        'AWS ECS',
+        'AWS ECR',
+      ],
+    },
+    {
       name: 'Kunhee Blog',
       startDate: '2023.11',
       endDate: '2023.12',
