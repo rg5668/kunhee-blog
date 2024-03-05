@@ -1,5 +1,12 @@
 export const playgrounds = [
   {
+    title: 'Smelu',
+    description: '2023.12 ~ 진행, Open AI를 활용한 향수 추천 서비스',
+    targetLink: 'https://smelu.com',
+    coverImage: '/post_images/project/smelu.png',
+    team: '개인',
+  },
+  {
     title: 'Movie Search App',
     description: '2023.12, OMDb를 활용한 영화 검색 사이트 개발',
     targetLink: 'https://kunhee-movie.vercel.app',
